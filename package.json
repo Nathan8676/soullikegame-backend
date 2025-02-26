@@ -1,0 +1,22 @@
+{
+  "name": "soullikegame-backend",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+
+  "scripts": {
+    "dev": " bun run --hot index.ts"
+  },
+
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "mongoose": "^8.10.1",
+    "prettier": "^3.5.2",
+    "socket.io": "^4.8.1"
+  }
+}
