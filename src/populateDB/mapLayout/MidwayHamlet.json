@@ -1,0 +1,2710 @@
+{
+  "name": "Midway Hamlet",
+  "description": "A mixed terrain where forest meets the outskirts of a noble town. Wild paths and stone streets converge in uneasy harmony.",
+  "floorLeveltoScaleEnemy": 5,
+  "floorLeveltoScaleBoss": 5,
+  "floorLevel": 5,
+  "floorBoss": {
+    "spawnPoint": {
+      "row": 9,
+      "col": 5
+    },
+    "floorBoss": "000000000000000000000000"
+  },
+  "floorEntitiesSpawnPoints": [
+    {
+      "quantity": 2,
+      "spawnPoint": {
+        "row": 3,
+        "col": 4
+      },
+      "floorEntity": "000000000000000000000000"
+    },
+    {
+      "quantity": 1,
+      "spawnPoint": {
+        "row": 12,
+        "col": 2
+      },
+      "floorEntity": "000000000000000000000000"
+    }
+  ],
+  "floorItem": [
+    "000000000000000000000000"
+  ],
+  "layout": [
+    [
+      {
+        "tileId": 102,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [
+            {
+              "textureRef": "textures/forest/foliage_overlay.png",
+              "offsetX": 0.07,
+              "offsetY": 0.03,
+              "tileType": "decoration"
+            }
+          ],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 102,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [
+            {
+              "textureRef": "textures/forest/foliage_overlay.png",
+              "offsetX": 0.05,
+              "offsetY": -0.13,
+              "tileType": "decoration"
+            }
+          ],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 100,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 100,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 102,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [
+            {
+              "textureRef": "textures/forest/foliage_overlay.png",
+              "offsetX": -0.05,
+              "offsetY": 0.02,
+              "tileType": "decoration"
+            }
+          ],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 101,
+        "property": {
+          "mainTileTextureRef": "textures/forest/tree.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": "slow"
+      },
+      {
+        "tileId": 102,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [
+            {
+              "textureRef": "textures/forest/foliage_overlay.png",
+              "offsetX": -0.02,
+              "offsetY": 0.01,
+              "tileType": "decoration"
+            }
+          ],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 101,
+        "property": {
+          "mainTileTextureRef": "textures/forest/tree.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": "slow"
+      },
+      {
+        "tileId": 100,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 101,
+        "property": {
+          "mainTileTextureRef": "textures/forest/tree.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": "slow"
+      }
+    ],
+    [
+      {
+        "tileId": 101,
+        "property": {
+          "mainTileTextureRef": "textures/forest/tree.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 101,
+        "property": {
+          "mainTileTextureRef": "textures/forest/tree.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": "slow"
+      },
+      {
+        "tileId": 102,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [
+            {
+              "textureRef": "textures/forest/foliage_overlay.png",
+              "offsetX": -0.15,
+              "offsetY": 0.16,
+              "tileType": "decoration"
+            }
+          ],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 101,
+        "property": {
+          "mainTileTextureRef": "textures/forest/tree.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": "slow"
+      },
+      {
+        "tileId": 100,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 102,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [
+            {
+              "textureRef": "textures/forest/foliage_overlay.png",
+              "offsetX": -0.05,
+              "offsetY": -0.16,
+              "tileType": "decoration"
+            }
+          ],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 102,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [
+            {
+              "textureRef": "textures/forest/foliage_overlay.png",
+              "offsetX": -0.03,
+              "offsetY": 0.06,
+              "tileType": "decoration"
+            }
+          ],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 102,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [
+            {
+              "textureRef": "textures/forest/foliage_overlay.png",
+              "offsetX": 0.07,
+              "offsetY": -0.07,
+              "tileType": "decoration"
+            }
+          ],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 100,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 100,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      }
+    ],
+    [
+      {
+        "tileId": 101,
+        "property": {
+          "mainTileTextureRef": "textures/forest/tree.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 100,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 100,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 102,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [
+            {
+              "textureRef": "textures/forest/foliage_overlay.png",
+              "offsetX": 0.1,
+              "offsetY": -0.17,
+              "tileType": "decoration"
+            }
+          ],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 100,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 101,
+        "property": {
+          "mainTileTextureRef": "textures/forest/tree.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 101,
+        "property": {
+          "mainTileTextureRef": "textures/forest/tree.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 100,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 102,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [
+            {
+              "textureRef": "textures/forest/foliage_overlay.png",
+              "offsetX": 0.05,
+              "offsetY": 0.11,
+              "tileType": "decoration"
+            }
+          ],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 100,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      }
+    ],
+    [
+      {
+        "tileId": 100,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 102,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [
+            {
+              "textureRef": "textures/forest/foliage_overlay.png",
+              "offsetX": -0.07,
+              "offsetY": 0.05,
+              "tileType": "decoration"
+            }
+          ],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 100,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 100,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 101,
+        "property": {
+          "mainTileTextureRef": "textures/forest/tree.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 100,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 101,
+        "property": {
+          "mainTileTextureRef": "textures/forest/tree.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": "slow"
+      },
+      {
+        "tileId": 101,
+        "property": {
+          "mainTileTextureRef": "textures/forest/tree.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 101,
+        "property": {
+          "mainTileTextureRef": "textures/forest/tree.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 101,
+        "property": {
+          "mainTileTextureRef": "textures/forest/tree.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      }
+    ],
+    [
+      {
+        "tileId": 102,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [
+            {
+              "textureRef": "textures/forest/foliage_overlay.png",
+              "offsetX": -0.13,
+              "offsetY": 0.08,
+              "tileType": "decoration"
+            }
+          ],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 102,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [
+            {
+              "textureRef": "textures/forest/foliage_overlay.png",
+              "offsetX": -0.06,
+              "offsetY": 0.03,
+              "tileType": "decoration"
+            }
+          ],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 101,
+        "property": {
+          "mainTileTextureRef": "textures/forest/tree.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": "slow"
+      },
+      {
+        "tileId": 100,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 101,
+        "property": {
+          "mainTileTextureRef": "textures/forest/tree.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": "slow"
+      },
+      {
+        "tileId": 100,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 100,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 101,
+        "property": {
+          "mainTileTextureRef": "textures/forest/tree.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 102,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [
+            {
+              "textureRef": "textures/forest/foliage_overlay.png",
+              "offsetX": -0.14,
+              "offsetY": -0.17,
+              "tileType": "decoration"
+            }
+          ],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 102,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [
+            {
+              "textureRef": "textures/forest/foliage_overlay.png",
+              "offsetX": -0.08,
+              "offsetY": -0.06,
+              "tileType": "decoration"
+            }
+          ],
+          "anchor": false
+        },
+        "effect": null
+      }
+    ],
+    [
+      {
+        "tileId": 101,
+        "property": {
+          "mainTileTextureRef": "textures/forest/tree.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": "slow"
+      },
+      {
+        "tileId": 100,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 101,
+        "property": {
+          "mainTileTextureRef": "textures/forest/tree.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 102,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [
+            {
+              "textureRef": "textures/forest/foliage_overlay.png",
+              "offsetX": -0.19,
+              "offsetY": -0.15,
+              "tileType": "decoration"
+            }
+          ],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 102,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [
+            {
+              "textureRef": "textures/forest/foliage_overlay.png",
+              "offsetX": 0.02,
+              "offsetY": -0.11,
+              "tileType": "decoration"
+            }
+          ],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 102,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [
+            {
+              "textureRef": "textures/forest/foliage_overlay.png",
+              "offsetX": -0.13,
+              "offsetY": 0.09,
+              "tileType": "decoration"
+            }
+          ],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 101,
+        "property": {
+          "mainTileTextureRef": "textures/forest/tree.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": "slow"
+      },
+      {
+        "tileId": 101,
+        "property": {
+          "mainTileTextureRef": "textures/forest/tree.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": "slow"
+      },
+      {
+        "tileId": 101,
+        "property": {
+          "mainTileTextureRef": "textures/forest/tree.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 102,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [
+            {
+              "textureRef": "textures/forest/foliage_overlay.png",
+              "offsetX": 0.16,
+              "offsetY": -0.04,
+              "tileType": "decoration"
+            }
+          ],
+          "anchor": false
+        },
+        "effect": null
+      }
+    ],
+    [
+      {
+        "tileId": 102,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [
+            {
+              "textureRef": "textures/forest/foliage_overlay.png",
+              "offsetX": -0.01,
+              "offsetY": -0.19,
+              "tileType": "decoration"
+            }
+          ],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 100,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 101,
+        "property": {
+          "mainTileTextureRef": "textures/forest/tree.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 100,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 102,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [
+            {
+              "textureRef": "textures/forest/foliage_overlay.png",
+              "offsetX": -0.13,
+              "offsetY": 0.16,
+              "tileType": "decoration"
+            }
+          ],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 100,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 101,
+        "property": {
+          "mainTileTextureRef": "textures/forest/tree.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 102,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [
+            {
+              "textureRef": "textures/forest/foliage_overlay.png",
+              "offsetX": 0.09,
+              "offsetY": 0.17,
+              "tileType": "decoration"
+            }
+          ],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 100,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 102,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [
+            {
+              "textureRef": "textures/forest/foliage_overlay.png",
+              "offsetX": -0.01,
+              "offsetY": -0.17,
+              "tileType": "decoration"
+            }
+          ],
+          "anchor": false
+        },
+        "effect": null
+      }
+    ],
+    [
+      {
+        "tileId": 102,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [
+            {
+              "textureRef": "textures/forest/foliage_overlay.png",
+              "offsetX": 0.14,
+              "offsetY": 0.05,
+              "tileType": "decoration"
+            }
+          ],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 101,
+        "property": {
+          "mainTileTextureRef": "textures/forest/tree.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 102,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [
+            {
+              "textureRef": "textures/forest/foliage_overlay.png",
+              "offsetX": 0.04,
+              "offsetY": -0.18,
+              "tileType": "decoration"
+            }
+          ],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 101,
+        "property": {
+          "mainTileTextureRef": "textures/forest/tree.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 100,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 100,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 100,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 101,
+        "property": {
+          "mainTileTextureRef": "textures/forest/tree.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 101,
+        "property": {
+          "mainTileTextureRef": "textures/forest/tree.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": "slow"
+      },
+      {
+        "tileId": 100,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      }
+    ],
+    [
+      {
+        "tileId": 102,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [
+            {
+              "textureRef": "textures/forest/foliage_overlay.png",
+              "offsetX": 0.01,
+              "offsetY": -0.2,
+              "tileType": "decoration"
+            }
+          ],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 100,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 102,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [
+            {
+              "textureRef": "textures/forest/foliage_overlay.png",
+              "offsetX": -0.16,
+              "offsetY": -0.06,
+              "tileType": "decoration"
+            }
+          ],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 101,
+        "property": {
+          "mainTileTextureRef": "textures/forest/tree.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 101,
+        "property": {
+          "mainTileTextureRef": "textures/forest/tree.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 102,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [
+            {
+              "textureRef": "textures/forest/foliage_overlay.png",
+              "offsetX": 0.06,
+              "offsetY": 0.11,
+              "tileType": "decoration"
+            }
+          ],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 100,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 100,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 101,
+        "property": {
+          "mainTileTextureRef": "textures/forest/tree.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 102,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [
+            {
+              "textureRef": "textures/forest/foliage_overlay.png",
+              "offsetX": 0.1,
+              "offsetY": 0.15,
+              "tileType": "decoration"
+            }
+          ],
+          "anchor": false
+        },
+        "effect": null
+      }
+    ],
+    [
+      {
+        "tileId": 100,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 101,
+        "property": {
+          "mainTileTextureRef": "textures/forest/tree.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 101,
+        "property": {
+          "mainTileTextureRef": "textures/forest/tree.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 102,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [
+            {
+              "textureRef": "textures/forest/foliage_overlay.png",
+              "offsetX": 0.09,
+              "offsetY": -0.1,
+              "tileType": "decoration"
+            }
+          ],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 102,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [
+            {
+              "textureRef": "textures/forest/foliage_overlay.png",
+              "offsetX": -0.19,
+              "offsetY": 0.01,
+              "tileType": "decoration"
+            }
+          ],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 100,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 102,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [
+            {
+              "textureRef": "textures/forest/foliage_overlay.png",
+              "offsetX": 0.15,
+              "offsetY": 0.03,
+              "tileType": "decoration"
+            }
+          ],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 102,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [
+            {
+              "textureRef": "textures/forest/foliage_overlay.png",
+              "offsetX": -0.03,
+              "offsetY": 0.01,
+              "tileType": "decoration"
+            }
+          ],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 100,
+        "property": {
+          "mainTileTextureRef": "textures/forest/grass.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 101,
+        "property": {
+          "mainTileTextureRef": "textures/forest/tree.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": "slow"
+      }
+    ],
+    [
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      }
+    ],
+    [
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      }
+    ],
+    [
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      }
+    ],
+    [
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      }
+    ],
+    [
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      }
+    ],
+    [
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      }
+    ],
+    [
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      }
+    ],
+    [
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      }
+    ],
+    [
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      }
+    ],
+    [
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 103,
+        "property": {
+          "mainTileTextureRef": "textures/town/stone_tile.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "walkable",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      },
+      {
+        "tileId": 104,
+        "property": {
+          "mainTileTextureRef": "textures/town/building_wall.png",
+          "mainTileOffsetX": 0,
+          "mainTileOffsetY": 0,
+          "tileType": "wall",
+          "LayerTile": [],
+          "anchor": false
+        },
+        "effect": null
+      }
+    ]
+  ],
+  "createdAt": "2025-07-21T14:12:27.420069",
+  "updatedAt": "2025-07-21T14:12:27.420076"
+}

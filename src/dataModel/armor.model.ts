@@ -9,7 +9,7 @@ enum ArmorType {
 
 
 
-interface Armor extends Document {
+export interface Armor extends Document {
   setsName: string;
   durability: number;
   physicalDefense: number;
@@ -82,4 +82,4 @@ const armorSchema = new Schema<Armor>({
   }
 }, {timestamps: true});
 
-export const ArmorModel = mongoose.model<Armor>("Armor", armorSchema);
+export default mongoose.model<Armor>("Armor", armorSchema);

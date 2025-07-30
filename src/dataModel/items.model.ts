@@ -5,7 +5,7 @@ enum ItemType {
   nonConsumable = "nonConsumable"
 }
 
-interface Item extends Document {
+export interface Item extends Document {
   name: string;
   type: ItemType;
   weight: number;

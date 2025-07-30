@@ -5,7 +5,7 @@ enum StatusEffectType {
   debuff = "debuff"
 }
 
-interface StatusEffect extends Document {
+export interface StatusEffect extends Document {
   name: string;
   description: string;
   effect: number;

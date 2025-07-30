@@ -5,10 +5,11 @@ enum WeaponType {
   longSword = "longSword",
   dagger = "dagger",
   staff = "staff",
-  bow = "bow"
+  bow = "bow",
+  axe = "axe"
 }
 
-interface Weapon extends Document {
+export interface Weapon extends Document {
   name: string;
   damage: number;
   manaCost: number;

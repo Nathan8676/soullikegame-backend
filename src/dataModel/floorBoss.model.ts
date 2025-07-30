@@ -1,13 +1,14 @@
 import mongoose, {Schema, Document} from "mongoose";
+import type { ItemsInterface, WeaponInterface, StatusEffectInterface } from "./index.ts";
 
-interface FloorBoss extends Document {
+export interface FloorBoss extends Document {
   name: string;
   health: number;
-  weaponSlot: Schema.Types.ObjectId;
-  inventory: Schema.Types.ObjectId[];
+  weaponSlot: Schema.Types.ObjectId | WeaponInterface;
+  inventory: Schema.Types.ObjectId[] | ItemsInterface[];
   mana: number;
   strength: number;
-  statusEffect: Schema.Types.ObjectId[];
+  statusEffect: Schema.Types.ObjectId[] | StatusEffectInterface[];
   createdAt: Date;
   updatedAt: Date;
 }

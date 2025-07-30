@@ -1,10 +1,9 @@
 import mongoose from "mongoose"
-
+import { DB_NAME } from "./Name.database.ts"
 async function connectDb(){
   try{
-    const db = await mongoose.connect("mongodb://localhost:27017/soulLikeGame")
-      console.log("Database connected");
-
+    await mongoose.connect(`${process.env.MONGODB_URL}/${DB_NAME}`)
+    console.log("Database connected");
   }catch(err){
     console.log(err, "database connection error");
     process.exit(1)
