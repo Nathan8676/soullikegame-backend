@@ -1,6 +1,6 @@
 import mongoose, {Schema, Document} from "mongoose";
 
-enum WeaponType {
+export enum WeaponType {
   shortSword = "shortSword",
   longSword = "longSword",
   dagger = "dagger",

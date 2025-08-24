@@ -1,0 +1,13 @@
+{
+  "name": "The Void Herald",
+  "health": 1000,
+  "mana": 500,
+  "strength": 60,
+  "statusEffect": [],
+  "weaponSlot": "Bloodreaver Axe",
+  "inventory": [
+    "Elixir of Vitality"
+  ],
+  "createdAt": "2025-01-01T00:00:00Z",
+  "updatedAt": "2025-01-01T00:00:00Z"
+}

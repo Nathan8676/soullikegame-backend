@@ -13,10 +13,10 @@ import type { MapLayout as MapLayoutInterface, TileLayout as TileLayoutInterface
 import StatusEffect from "./statusEffect.model.ts"
 import type { StatusEffect as StatusEffectInterface} from "./statusEffect.model.ts"
 import Weapon from "./weapons.model.ts"
-import type { Weapon as WeaponInterface} from "./weapons.model.ts"
+import type { Weapon as WeaponInterface , WeaponType} from "./weapons.model.ts"
 import Quest from "./quest.model.ts"
 import type {Quest as QuestInterfate} from "./quest.model.ts"
 
 export { Armor, Character, FloorBoss, FloorEnemy, Item , MapLayout, StatusEffect, Weapon, Quest }
 
-export type { CharacterInterface, ArmorInterface, FloorBossInterface, FloorEntitiesInterface, ItemsInterface, MapLayoutInterface, TileLayoutInterface, StatusEffectInterface, WeaponInterface, QuestInterfate}
+export type { CharacterInterface, ArmorInterface, FloorBossInterface, FloorEntitiesInterface, ItemsInterface, MapLayoutInterface, TileLayoutInterface, StatusEffectInterface, WeaponInterface, QuestInterfate, WeaponType}

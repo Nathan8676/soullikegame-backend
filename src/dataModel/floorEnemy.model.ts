@@ -1,10 +1,8 @@
-import mongoose, {Schema, Document} from "mongoose";
+import mongoose, { Schema, Document } from "mongoose";
 
-export interface FloorEntities extends Document {
+export interface FloorEnemy extends Document {
   name: string;
   health: number;
-  hostile: boolean;
-  interaction: boolean;
   weaponSlot: Schema.Types.ObjectId;
   inventory: Schema.Types.ObjectId[];
   mana: number;
@@ -12,10 +10,9 @@ export interface FloorEntities extends Document {
   statusEffect: Schema.Types.ObjectId[];
   createdAt: Date;
   updatedAt: Date;
-  [key: string]: any
 };
 
-const floorEnemySchema = new Schema<FloorEntities>({
+const floorEnemySchema = new Schema<FloorEnemy>({
   name: {
     type: String,
     required: true,
@@ -26,16 +23,6 @@ const floorEnemySchema = new Schema<FloorEntities>({
     required: true,
     default: 100,
     min: 0
-  },
-  hostile: {
-    type: Boolean,
-    required: true,
-    default: false
-  },
-  interaction: {
-    type: Boolean,
-    required: true,
-    default: false
   },
   mana: {
     type: Number,
@@ -50,8 +37,8 @@ const floorEnemySchema = new Schema<FloorEntities>({
     min: 0
   },
   statusEffect: {
-   type: [Schema.Types.ObjectId],
-   ref: "StatusEffect"
+    type: [Schema.Types.ObjectId],
+    ref: "StatusEffect"
   },
   weaponSlot: {
     type: Schema.Types.ObjectId,
@@ -61,6 +48,6 @@ const floorEnemySchema = new Schema<FloorEntities>({
     type: [Schema.Types.ObjectId],
     ref: "Item"
   }
-}, {timestamps: true});
+}, { timestamps: true });
 
-export default  mongoose.model<FloorEntities>("FloorEnemy", floorEnemySchema);
+export default mongoose.model<FloorEnemy>("FloorEnemy", floorEnemySchema);

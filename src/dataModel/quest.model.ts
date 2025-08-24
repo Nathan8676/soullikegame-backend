@@ -1,4 +1,4 @@
-import mongoose, {Schema, Document} from "mongoose";
+import mongoose, { Schema, Document } from "mongoose";
 
 enum taskTypeEnum {
   kill = "kill",
@@ -14,6 +14,7 @@ export interface Quest extends Document {
   tasks: {
     description: string;
     taskType: taskTypeEnum;
+    requiredAmount: number;
     tragetId: Schema.Types.ObjectId | null | string;
     taskReward: {
       RewardId: Schema.Types.ObjectId | null | string
@@ -23,13 +24,13 @@ export interface Quest extends Document {
   }[]
   reward: {
     gold: number | null;
-    experience: number | null ;
+    experience: number | null;
     items: Schema.Types.ObjectId[] | null;
   };
   createdAt: Date;
   updatedAt: Date;
   // previous thing needs to do before completed to unlock this quest
-  previous:{
+  previous: {
     quest: Schema.Types.ObjectId[] | null
     [key: string]: any
   },
@@ -58,7 +59,7 @@ const questSchema = new Schema<Quest>({
         enum: Object.values(taskTypeEnum)
       },
       taskReward: {
-        type:[
+        type: [
           {
             RewardId: {
               type: Schema.Types.ObjectId,
@@ -104,6 +105,6 @@ const questSchema = new Schema<Quest>({
       default: null
     }
   },
-},{timestamps: true});
+}, { timestamps: true });
 
 export default mongoose.model<Quest>("Quest", questSchema);

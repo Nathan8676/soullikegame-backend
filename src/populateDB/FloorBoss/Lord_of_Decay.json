@@ -1,0 +1,13 @@
+{
+  "name": "Lord of Decay",
+  "health": 400,
+  "mana": 200,
+  "strength": 30,
+  "statusEffect": [],
+  "weaponSlot": "Celestial Staff",
+  "inventory": [
+    "Elixir of Vitality"
+  ],
+  "createdAt": "2025-01-01T00:00:00Z",
+  "updatedAt": "2025-01-01T00:00:00Z"
+}

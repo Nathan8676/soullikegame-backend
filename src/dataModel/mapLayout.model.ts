@@ -1,5 +1,5 @@
-import mongoose, {Schema, Document} from "mongoose";
-import type {ItemsInterface, FloorEntitiesInterface, FloorBossInterface} from "./index.ts";
+import mongoose, { Schema, Document } from "mongoose";
+import type { ItemsInterface, FloorEntitiesInterface, FloorBossInterface } from "./index.ts";
 
 export interface TileLayout {
   tileId: number;
@@ -35,17 +35,17 @@ export interface MapLayout extends Document {
     floorBoss: Schema.Types.ObjectId | FloorBossInterface,
     [key: string]: any
   }
-  floorEntitiesSpawnPoints:[{
+  floorEntitiesSpawnPoints: [{
     quantity: number,
     spawnPoint: {
       row: number,
       col: number
     },
-    floorEntity: Schema.Types.ObjectId |FloorEntitiesInterface,
+    floorEntity: Schema.Types.ObjectId | FloorEntitiesInterface,
     [key: string]: any
   }],
   floorItem: Schema.Types.ObjectId[] | ItemsInterface[];
-  layout: [[TileLayout]];
+  layout: TileLayout[][];
   createdAt: Date;
   updatedAt: Date;
 }
@@ -56,24 +56,24 @@ const TileLayoutSchema = new Schema<TileLayout>({
     required: true
   },
   property: {
-    anchor: {type: Boolean},
-    mainTileTextureRef: {type: String, required: true},
-    mainTileOffsetX: {type: Number, required: true, default: 0},
-    mainTileOffsetY: {type: Number, required: true, default: 0},
-    tileType: {type: String, required: true},
+    anchor: { type: Boolean },
+    mainTileTextureRef: { type: String, required: true },
+    mainTileOffsetX: { type: Number, required: true, default: 0 },
+    mainTileOffsetY: { type: Number, required: true, default: 0 },
+    tileType: { type: String, required: true },
     LayerTile: {
       type: [
         {
-          textureRef: {type: String, required: true},
-          offsetX: {type: Number, required: true, default: 0},
-          offsetY: {type: Number, required: true, default: 0},
-          tileType: {type: String, required: true}
+          textureRef: { type: String, required: true },
+          offsetX: { type: Number, required: true, default: 0 },
+          offsetY: { type: Number, required: true, default: 0 },
+          tileType: { type: String, required: true }
         }
       ]
     }
   },
-  effect: {type: String}
-})
+  effect: { type: String }
+}, { _id: false })
 
 const mapLayoutSchema = new Schema<MapLayout>({
   name: {
@@ -98,7 +98,7 @@ const mapLayoutSchema = new Schema<MapLayout>({
     required: true
   },
   floorBoss: {
-    type: {
+    type: new Schema({
       spawnPoint: {
         row: Number,
         col: Number
@@ -107,21 +107,23 @@ const mapLayoutSchema = new Schema<MapLayout>({
         type: Schema.Types.ObjectId,
         ref: "FloorBoss"
       }
-    },
+    }, { _id: false }),
     default: {}
   },
   floorEntitiesSpawnPoints: {
-    type: [{
-      quantity: Number,
-      spawnPoint: {
-       row: Number,
-       col: Number
-      },
-      floorEntity: {
-        type: Schema.Types.ObjectId,
-        ref: "FloorEnemy"
-      }
-    }],
+    type: [
+      new Schema({
+        quantity: Number,
+        spawnPoint: {
+          row: Number,
+          col: Number
+        },
+        floorEntity: {
+          type: Schema.Types.ObjectId,
+          ref: "FloorEnemy"
+        }
+      }, { _id: false }),
+    ],
     default: []
   },
   floorItem: {
@@ -132,7 +134,7 @@ const mapLayoutSchema = new Schema<MapLayout>({
     type: [[TileLayoutSchema]],
     required: true
   }
-}, {timestamps: true});
+}, { timestamps: true });
 
 
 export default mongoose.model<MapLayout>("MapLayout", mapLayoutSchema);

@@ -1,0 +1,11 @@
+{
+  "name": "Bone Archer",
+  "health": 90,
+  "weaponSlot": "Nightstalker Bow",
+  "inventory": [
+    "Phantom Essence"
+  ],
+  "mana": 0,
+  "strength": 10,
+  "statusEffect": []
+}

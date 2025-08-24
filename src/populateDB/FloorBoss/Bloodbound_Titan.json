@@ -1,0 +1,13 @@
+{
+  "name": "Bloodbound Titan",
+  "health": 550,
+  "mana": 100,
+  "strength": 40,
+  "statusEffect": [],
+  "weaponSlot": "Dragon’s Bane",
+  "inventory": [
+    "Elixir of Vitality"
+  ],
+  "createdAt": "2025-01-01T00:00:00Z",
+  "updatedAt": "2025-01-01T00:00:00Z"
+}

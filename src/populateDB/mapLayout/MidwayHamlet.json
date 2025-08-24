@@ -7,9 +7,9 @@
   "floorBoss": {
     "spawnPoint": {
       "row": 9,
-      "col": 5
+      "col": 6
     },
-    "floorBoss": "000000000000000000000000"
+    "floorBoss": "689d87a87949e84d06b18b3b"
   },
   "floorEntitiesSpawnPoints": [
     {
@@ -18,7 +18,7 @@
         "row": 3,
         "col": 4
       },
-      "floorEntity": "000000000000000000000000"
+      "floorEntity": "6899cbbda4de794c6560335f"
     },
     {
       "quantity": 1,
@@ -26,11 +26,11 @@
         "row": 12,
         "col": 2
       },
-      "floorEntity": "000000000000000000000000"
+      "floorEntity": "6899cbbda4de794c65603360"
     }
   ],
   "floorItem": [
-    "000000000000000000000000"
+    "6899cbbda4de794c65603361"
   ],
   "layout": [
     [

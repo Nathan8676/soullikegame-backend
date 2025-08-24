@@ -1,0 +1,12 @@
+{
+  "name": "Cave Stalker",
+  "health": 120,
+  "weaponSlot": "Shadow’s Edge",
+  "inventory": [
+    "Elixir of Vitality",
+    "Battle Bandage"
+  ],
+  "mana": 0,
+  "strength": 12,
+  "statusEffect": []
+}

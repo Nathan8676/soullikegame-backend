@@ -12,27 +12,27 @@ export interface Character extends Document {
     row: number,
     col: number
   }
-  weaponSlot?:  Schema.Types.ObjectId | string | null | WeaponInterface;
-  armorSlot?:  {
+  weaponSlot?: Schema.Types.ObjectId | string | null | WeaponInterface;
+  armorSlot?: {
     headGear?: Schema.Types.ObjectId | ArmorInterface | null,
     chestArmor?: Schema.Types.ObjectId | ArmorInterface | null,
     handArmor?: Schema.Types.ObjectId | ArmorInterface | null,
     legArmor?: Schema.Types.ObjectId | ArmorInterface | null
   };
-  inventory: [{
+  inventory: {
     item: Schema.Types.ObjectId | string | ItemsInterface,
     quantity: number
-  }] | null
-  Quest:{
+  }[]
+  Quest: {
     completedQuest: Schema.Types.ObjectId[] | null | QuestInterfate[]
-    currentQuest:{
+    currentQuest: {
+      QuestState: string
       isComplete: boolean
       currentTaskIndex: number
       QuestDetail: Schema.Types.ObjectId | null | QuestInterfate
-
     }
-    nextQuest:Schema.Types.ObjectId[] | null | QuestInterfate[]
-    sideQuest:Schema.Types.ObjectId[] | null | QuestInterfate[]
+    nextQuest: Schema.Types.ObjectId[] | null | QuestInterfate[]
+    sideQuest: Schema.Types.ObjectId[] | null | QuestInterfate[]
   }
   statusEffect: Schema.Types.ObjectId[] | StatusEffectInterface[] | null;
   level: number;
@@ -64,7 +64,7 @@ const charaterSchema = new Schema<Character>({
     default: 50
   },
   characterPosition: {
-    type:new Schema({
+    type: new Schema({
       Floor: {
         type: Number,
         required: true
@@ -77,8 +77,8 @@ const charaterSchema = new Schema<Character>({
         type: Number,
         required: true
       }
-    },{_id: false}),
-    default: {row: 0, col: 0}
+    }, { _id: false }),
+    default: { row: 0, col: 0, Floor: 0 }
   },
   weaponSlot: {
     type: Schema.Types.ObjectId,
@@ -112,7 +112,7 @@ const charaterSchema = new Schema<Character>({
         ref: "Armor"
       },
       default: {}
-    }, {_id: false})
+    }, { _id: false })
   },
   strength: {
     type: Number,
@@ -121,7 +121,7 @@ const charaterSchema = new Schema<Character>({
     min: 0
   },
   inventory: {
-    type: [ new Schema({
+    type: [new Schema({
       item: {
         type: Schema.Types.ObjectId,
         ref: "Item"
@@ -132,28 +132,28 @@ const charaterSchema = new Schema<Character>({
         default: 1,
         min: 1
       }
-    }, {_id: false})],
+    }, { _id: false })],
     validate: [arrayLimit, "Inventory cannot have more than 15 items"],
     default: []
   },
   Quest: {
     type: new Schema({
-      completedQuest:{type: [Schema.Types.ObjectId], ref: "Quest"},
+      completedQuest: { type: [Schema.Types.ObjectId], ref: "Quest" },
       currentQuest: {
-      type: new Schema({
-        isComplete: {type: Boolean, default: false, required: true},
-        QuestDetail: {type: Schema.Types.ObjectId ,ref: "Quest"},
-        currentTaskIndex: {type: Number, default: 0, required: true }
-      },{_id: false}),
-      default: {
-        isComplete: false,
-        QuestDetail: null,
-        currentTaskIndex: 0
+        type: new Schema({
+          isComplete: { type: Boolean, default: false, required: true },
+          QuestDetail: { type: Schema.Types.ObjectId, ref: "Quest" },
+          currentTaskIndex: { type: Number, default: 0, required: true }
+        }, { _id: false }),
+        default: {
+          isComplete: false,
+          QuestDetail: null,
+          currentTaskIndex: 0
         }
-    },
-      nextQuest: {type: [Schema.Types.ObjectId] ,ref: "Quest"},
-      sideQuest: {type: [Schema.Types.ObjectId] ,ref: "Quest"}
-    },{_id: false}),
+      },
+      nextQuest: { type: [Schema.Types.ObjectId], ref: "Quest" },
+      sideQuest: { type: [Schema.Types.ObjectId], ref: "Quest" }
+    }, { _id: false }),
     default: {}
   },
   level: {

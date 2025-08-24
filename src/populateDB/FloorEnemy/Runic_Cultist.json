@@ -1,0 +1,11 @@
+{
+  "name": "Runic Cultist",
+  "health": 150,
+  "weaponSlot": "Arcane Scepter",
+  "inventory": [
+    "Arcane Elixir"
+  ],
+  "mana": 40,
+  "strength": 8,
+  "statusEffect": []
+}

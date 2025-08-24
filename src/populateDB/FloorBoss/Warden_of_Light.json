@@ -1,0 +1,13 @@
+{
+  "name": "Warden of Light",
+  "health": 300,
+  "mana": 150,
+  "strength": 25,
+  "statusEffect": [],
+  "weaponSlot": "Oathkeeper Blade",
+  "inventory": [
+    "Elixir of Vitality"
+  ],
+  "createdAt": "2025-01-01T00:00:00Z",
+  "updatedAt": "2025-01-01T00:00:00Z"
+}
