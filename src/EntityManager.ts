@@ -1,3 +1,4 @@
+import { Socket } from "socket.io"
 import type { CharacterInterface, TileLayoutInterface } from "./dataModel/index.ts"
 import { ECS } from "./Entites/baseEntity.ts"
 import type GameState from "./gameState.ts"
@@ -15,6 +16,7 @@ export class ECSManager {
   private GlobalTime!: number
   private Entites: ECS[] = []
   private chunkData!: chunks
+  private socketEntities: Map<string, Socket> = new Map()
   private playerPos!: characterPosition
   private renderDistance: number = 20
   private systems: ((entity: ECS[], deltaTime: number, chunk?: Map<string, TileLayoutInterface[][]>, globalTime?: number) => void)[] = []
@@ -32,6 +34,10 @@ export class ECSManager {
     if (rd) {
       this.setRenderDistance(rd)
     }
+  }
+
+  linkSocket(playerId: string, socket: Socket) {
+    this.socketEntities.set(playerId, socket)
   }
 
   setGlobalTime(val: number) {
