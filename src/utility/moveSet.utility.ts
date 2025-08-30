@@ -14,7 +14,7 @@ export interface WeaponMoveSetInterface {
 }
 
 
-export const weaponMoveSets: Record<WeaponType, WeaponMoveSetInterface> = {
+const weaponMoveSets: Record<WeaponType, WeaponMoveSetInterface> = {
   shortSword: {
     attackSpeed: 1.0,
     attackRange: 1.5,

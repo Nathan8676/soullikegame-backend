@@ -1,4 +1,5 @@
 import express from "express";
+import cookieParser from "cookie-parser";
 import type { rigidBody } from "./Entites/PlayerEntity";
 import { loadDataBeforeGameLoopStarts, gameLoop } from "./gameLoop";
 import { movePlayerSystem } from "./system/movement.system";
@@ -17,6 +18,8 @@ export const io = new Server(server, {
     credentials: true,
   },
 });
+
+app.use(cookieParser())
 
 // Routes
 app.get("/", (req, res) => {

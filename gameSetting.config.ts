@@ -38,6 +38,12 @@ export const config = {
   debug: {
     debugMode: process.env.DEBUG_MODE === "true",
     logLevel: process.env.LOG_LEVEL || "info",
+  },
+  user: {
+    accessTokenSecret: process.env.JWT_GENERATE_ACCESS_TOKEN_SECRET,
+    accessTokenExpiresIn: process.env.JWT_GENERATE_ACCESS_TOKEN_EXPIRES_IN,
+    refreshTokenSecret: process.env.JWT_GENERATE_REFRESH_TOKEN_SECRET,
+    refreshTokenExpiresIn: process.env.JWT_GENERATE_REFRESH_TOKEN_EXPIRES_IN
   }
 }
 

@@ -1,22 +1,35 @@
-import Armor from "./armor.model.ts"
-import type { Armor as ArmorInterface } from "./armor.model.ts"
-import Character from "./character.model.ts"
-import type { Character as CharacterInterface  } from "./character.model.ts"
-import FloorBoss from "./floorBoss.model.ts"
-import type { FloorBoss as FloorBossInterface} from "./floorBoss.model.ts"
-import FloorEnemy from "./floorEnemy.model.ts"
-import type { FloorEntities as FloorEntitiesInterface} from "./floorEnemy.model.ts"
-import Item from "./items.model.ts"
-import type { Item as ItemsInterface} from "./items.model.ts"
-import MapLayout from "./mapLayout.model.ts"
-import type { MapLayout as MapLayoutInterface, TileLayout as TileLayoutInterface} from "./mapLayout.model.ts"
-import StatusEffect from "./statusEffect.model.ts"
-import type { StatusEffect as StatusEffectInterface} from "./statusEffect.model.ts"
-import Weapon from "./weapons.model.ts"
-import type { Weapon as WeaponInterface , WeaponType} from "./weapons.model.ts"
-import Quest from "./quest.model.ts"
-import type {Quest as QuestInterfate} from "./quest.model.ts"
+export { default as Armor } from "./armor.model.ts";
+export type { Armor as ArmorInterface } from "./armor.model.ts";
 
-export { Armor, Character, FloorBoss, FloorEnemy, Item , MapLayout, StatusEffect, Weapon, Quest }
+export { default as Character } from "./character.model.ts";
+export type { Character as CharacterInterface } from "./character.model.ts";
 
-export type { CharacterInterface, ArmorInterface, FloorBossInterface, FloorEntitiesInterface, ItemsInterface, MapLayoutInterface, TileLayoutInterface, StatusEffectInterface, WeaponInterface, QuestInterfate, WeaponType}
+export { default as FloorBoss } from "./floorBoss.model.ts";
+export type { FloorBoss as FloorBossInterface } from "./floorBoss.model.ts";
+
+export { default as User } from "./user.model.ts";
+export type { IUser as UserInterface } from "./user.model.ts";
+
+export { default as FloorEnemy } from "./floorEnemy.model.ts";
+export type { FloorEnemy as FloorEnemyInterface } from "./floorEnemy.model.ts";
+
+export { default as Item } from "./items.model.ts";
+export type { Item as ItemsInterface } from "./items.model.ts";
+
+export { default as MapLayout } from "./mapLayout.model.ts";
+export type {
+  MapLayout as MapLayoutInterface,
+  TileLayout as TileLayoutInterface
+} from "./mapLayout.model.ts";
+
+export { default as StatusEffect } from "./statusEffect.model.ts";
+export type { StatusEffect as StatusEffectInterface } from "./statusEffect.model.ts";
+
+export { default as Weapon } from "./weapons.model.ts";
+export type {
+  Weapon as WeaponInterface,
+  WeaponType
+} from "./weapons.model.ts";
+
+export { default as Quest } from "./quest.model.ts";
+export type { Quest as QuestInterfate } from "./quest.model.ts";

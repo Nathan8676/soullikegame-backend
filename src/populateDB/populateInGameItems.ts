@@ -1,5 +1,5 @@
-import type {Request, Response, NextFunction} from "express"
-import {Item, Weapon, Armor} from "../dataModel/index.ts"
+import type { Request, Response, NextFunction } from "express"
+import { Item, Weapon, Armor } from "../dataModel/index.ts"
 export async function populateBaseItems(req: Request, res: Response, next: NextFunction) {
   console.log("populating items")
   const items = [
@@ -420,36 +420,36 @@ export async function populateBaseItems(req: Request, res: Response, next: NextF
   const newAddItems = items.filter(item => !existingItems.includes(item.name.trim().toLowerCase()))
   const newAddWeapon = BaseWeapon.filter(item => !existingBaseWeapon.includes(item.name.trim().toLowerCase()))
 
-  if(newAddArmor.length > 0){
-    try{
-      const insertedArmor = await Armor.insertMany(newAddArmor, {ordered: false})
+  if (newAddArmor.length > 0) {
+    try {
+      const insertedArmor = await Armor.insertMany(newAddArmor, { ordered: false })
       console.log("Successfully inserted armor:", insertedArmor.map(item => item.setsName))
-    }catch(e){
-      console.log("Failed to insert armor", newAddArmor.map(item => item.setsName),e)
-      return res.status(400).json({message: "Error in inserting armor", error: e, success: false})
+    } catch (e) {
+      console.log("Failed to insert armor", newAddArmor.map(item => item.setsName), e)
+      return res.status(400).json({ message: "Error in inserting armor", error: e, success: false })
     }
   }
 
-  if(newAddItems.length > 0){
-    try{
-      const insertedItems = await Item.insertMany(newAddItems, {ordered: false})
+  if (newAddItems.length > 0) {
+    try {
+      const insertedItems = await Item.insertMany(newAddItems, { ordered: false })
       console.log("Successfully inserted items:", insertedItems.map(item => item.name))
-    }catch(e){
-      console.log("Failed to insert items", newAddItems.map(item => item.name),e)
-      return res.status(400).json({message: "Error in inserting items", error: e, success: false})
+    } catch (e) {
+      console.log("Failed to insert items", newAddItems.map(item => item.name), e)
+      return res.status(400).json({ message: "Error in inserting items", error: e, success: false })
     }
   }
 
-  if(newAddWeapon.length > 0){
-    try{
+  if (newAddWeapon.length > 0) {
+    try {
       const insertedWeapons = await Weapon.insertMany(newAddWeapon, { ordered: false })
       console.log("Successfully inserted weapons:", insertedWeapons.map(w => w.name))
-    }catch(e){
-      console.log("Failed to insert weapon", newAddWeapon.map(item => item.name),e)
-      return res.status(400).json({message: "Error in inserting Weapon", error: e, success: false})
+    } catch (e) {
+      console.log("Failed to insert weapon", newAddWeapon.map(item => item.name), e)
+      return res.status(400).json({ message: "Error in inserting Weapon", error: e, success: false })
     }
   }
-  if(newAddItems.length === 0 && newAddWeapon.length === 0 && newAddArmor.length === 0){
+  if (newAddItems.length === 0 && newAddWeapon.length === 0 && newAddArmor.length === 0) {
     console.log("No new items to insert")
   }
 
