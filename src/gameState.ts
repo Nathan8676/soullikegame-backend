@@ -1,6 +1,6 @@
 import { Armor, Character, FloorBoss, FloorEnemy, Item, MapLayout, StatusEffect, Weapon, Quest } from "./dataModel/index.ts"
-import type { CharacterInterface, ArmorInterface, FloorBossInterface, FloorEntitiesInterface, ItemsInterface, MapLayoutInterface, TileLayoutInterface, StatusEffectInterface, WeaponInterface } from "./dataModel/index.ts"
-import { StarterCharacter } from "./utility/starterChracter.utility.ts"
+import type { CharacterInterface, ArmorInterface, FloorBossInterface, FloorEnemyInterface, ItemsInterface, MapLayoutInterface, TileLayoutInterface, StatusEffectInterface, WeaponInterface } from "./dataModel/index.ts"
+import { StarterCharacter } from "./utility/index.utility.ts"
 
 export enum ClassType {
   Assassin = "Assassin",

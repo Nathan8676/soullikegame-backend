@@ -7,8 +7,8 @@ export type { Character as CharacterInterface } from "./character.model.ts";
 export { default as FloorBoss } from "./floorBoss.model.ts";
 export type { FloorBoss as FloorBossInterface } from "./floorBoss.model.ts";
 
-export { default as User } from "./user.model.ts";
-export type { IUser as UserInterface } from "./user.model.ts";
+export { default as User, zUserSchema, pubUserSchema } from "./user.model.ts";
+export type { IUser as UserInterface, PubUser, Zuser } from "./user.model.ts";
 
 export { default as FloorEnemy } from "./floorEnemy.model.ts";
 export type { FloorEnemy as FloorEnemyInterface } from "./floorEnemy.model.ts";

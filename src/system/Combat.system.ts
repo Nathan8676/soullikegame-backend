@@ -1,5 +1,4 @@
-import type { WeaponMoveSetInterface } from "../utility/moveSet.utility";
-import { assertSoftDefined } from "../utility/assert.utility";
+import { assertSoftDefined, type WeaponMoveSetInterface } from "../utility/index.utility"
 import { ECS } from "../Entites/baseEntity";
 import { config } from "../../gameSetting.config";
 import type { TileLayoutInterface } from "../dataModel";
