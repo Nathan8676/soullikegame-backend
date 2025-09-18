@@ -1,29 +1,32 @@
-import {io} from "./app";
-import {Socket} from "socket.io";
-
-type AllClientSockets =  Map<string, Client>
-
-export var clients: AllClientSockets = new Map()
+import { Socket } from "socket.io";
+import { config } from "../../gameSetting.config";
+import type { ECSManager } from "../EntityManager";
 
 export interface Client extends Socket {
   [key: string]: any
 }
 
-const InputEvents = async (socket: Client) => {
-  socket.on("W", () => {
+export const InputEvents = async (socket: Client, ecsManager: ECSManager, playerId: number) => {
+  socket.on("W", (data) => {
     // function for moving the character forward and validation for that move, comes from input.ts
+    ecsManager.emit("move", { entityId: playerId, ddirection: "W" })
   })
-  socket.on("D", () => {
+  socket.on("D", (data) => {
     // function for moving the character right and validation for that move, comes from input.ts
+    ecsManager.emit("move", { entityId: playerId, direction: "D" })
   })
-  socket.on("A", () => {
+  socket.on("A", (data) => {
     // function for moving the character left and validation for that move, comes from input.ts
+    ecsManager.emit("move", { entityId: playerId, direction: "A" })
   })
-  socket.on("S", () => {
+  socket.on("S", (data) => {
     // function for moving the character down and validation for that move, comes from input.ts
+    ecsManager.emit("move", { entityId: playerId, direction: "S" })
   })
-  socket.on("Attack", () => {
+  socket.on("Attack", (data) => {
     // function for the character to attack and validation for that move, comes from input.ts
+    ecsManager.emit("Attack", { playerId: playerId, atckType: data.AttackType })
+
   })
   socket.on("inventory", () => {
     // function for the character to open inventory and validation for that move, comes from input.ts
@@ -45,11 +48,3 @@ const InputEvents = async (socket: Client) => {
   })
 }
 
-io.on("connection", (client) => {
-  // turn on connection by if condition met
-  if(client.handshake.auth?.characterName == null || client.handshake.auth?.characterName == undefined) return
-  console.log("Client connected", client.id, client.handshake.auth.characterName);
-
-  clients.set(client.id, client)
-  InputEvents(client)
-})

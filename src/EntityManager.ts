@@ -1,8 +1,12 @@
 import { Socket } from "socket.io"
+import { type AttackState, AttackType } from "./Entites/PlayerEntity.ts"
+import type { rigidBody } from "./Entites/PlayerEntity.ts"
 import type { CharacterInterface, TileLayoutInterface } from "./dataModel/index.ts"
 import { ECS } from "./Entites/baseEntity.ts"
 import type GameState from "./gameState.ts"
 import { inRenderDistance } from "./physics/physics.ts"
+import { EventEmitter } from "events"
+import { config } from "../gameSetting.config.ts"
 
 type characterPosition = {
   Floor: number,
@@ -12,7 +16,7 @@ type characterPosition = {
 
 type chunks = Map<string, TileLayoutInterface[][]>
 
-export class ECSManager {
+export class ECSManager extends EventEmitter {
   private GlobalTime!: number
   private Entites: ECS[] = []
   private chunkData!: chunks
@@ -28,12 +32,77 @@ export class ECSManager {
   }
 
   private constructor(playerPos: characterPosition, chunk: chunks, globalTime: number, rd?: number) {
+    super()
     this.setGlobalTime(globalTime)
     this.setPlayerPos(playerPos)
     this.setChunkData(chunk)
+    this.setupEvent()
     if (rd) {
       this.setRenderDistance(rd)
     }
+  }
+
+  private setupEvent() {
+    this.on("move", (data) => {
+      const dir = data.direction
+      const playerId = data.entityId
+      const entity = this.getEntityWithId(playerId)
+
+      if (!entity) return
+
+      const rb = entity.getComponent("rigidBody") as rigidBody
+
+      switch (dir) {
+        case "W":
+          rb.acceleration.y += config.player.baseAccle
+          entity.updateComponent<rigidBody>("rigidBody", rb)
+
+          break
+        case "D":
+          rb.acceleration.x += config.player.baseAccle
+          entity.updateComponent<rigidBody>("rigidBody", rb)
+
+          break
+        case "A":
+          rb.acceleration.x -= config.player.baseAccle
+          entity.updateComponent<rigidBody>("rigidBody", rb)
+
+          break
+        case "S":
+          rb.acceleration.y -= config.player.baseAccle
+          entity.updateComponent<rigidBody>("rigidBody", rb)
+
+          break
+
+      }
+    })
+
+    this.on("Attack", (data) => {
+      const { playerId, atckType } = data
+      const entity = this.getEntityWithId(playerId)
+      if (!entity) return
+      const attackState = entity.getComponent<AttackState>("attackState")
+      if (!attackState) return
+
+      switch (atckType) {
+        case "lightAttack":
+          attackState.status = AttackType.lightAttack
+          attackState.lastAttacktime = this.getGlobalTime()
+
+          break
+        case "spacialAttack":
+          attackState.status = AttackType.specialAttack
+          attackState.lastAttacktime = this.getGlobalTime()
+
+          break
+        case "heavyAttack":
+          attackState.status = AttackType.heavyAttack
+          attackState.lastAttacktime = this.getGlobalTime()
+
+          break
+      }
+    })
+
   }
 
   linkSocket(playerId: string, socket: Socket) {

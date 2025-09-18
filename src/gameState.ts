@@ -24,10 +24,10 @@ class GameState {
   }
   async newGameState(Name: string, startingCharacter: ClassType) {
     this.clearGameState()
-    const character = await StarterCharacter(startingCharacter)
-    character.name = Name
-    Character.create(character)
-    return character
+    const selectedCharacter = await StarterCharacter(startingCharacter)
+    selectedCharacter.name = Name
+    return Character.create(selectedCharacter)
+
   }
   async loadGameState(CharacterId: string) {
     if (!this.character) {

@@ -1,4 +1,5 @@
 import type { WeaponType, CharacterInterface } from "../dataModel/index.ts"
+import { config } from "../../gameSetting.config.ts";
 import { ECS } from "./baseEntity.ts";
 
 export type Vec2 = { x: number, y: number };
@@ -77,14 +78,14 @@ export class PlayerEntity extends ECS {
     this.addComponent("rigidBody", {
       position: { x: data.characterPosition.col, y: data.characterPosition.row, z: 0 },
       velocity: { x: 0, y: 0, z: 0 },
-      acceleration: { x: 4, y: 0, z: 0 },
+      acceleration: { x: 0, y: 0, z: 0 },
       direction: { x: 0, y: 0, z: 0 },
       facingDirection: FacingDirection[facingEnum.Down],
       mass: 1,
-      friction: 30,
-      drag: 2,
-      maxSpeed: 5,
-      maxSprintingSpeed: 7
+      friction: config.player.friction,
+      drag: config.player.drag,
+      maxSpeed: config.player.maxSpeed,
+      maxSprintingSpeed: config.player.maxSprintingSpeed
     } as rigidBody)
     this.addComponent("attackState", {
       status: AttackType.null,

@@ -1,5 +1,5 @@
-import type {WeaponInterface, WeaponType, ArmorInterface, StatusEffectInterface, MapLayoutInterface, ItemsInterface, QuestInterfate, CharacterInterface} from "../dataModel/index.ts"
-import {Weapon, Armor, Item} from "../dataModel/index.ts"
+import type { WeaponInterface, WeaponType, ArmorInterface, StatusEffectInterface, MapLayoutInterface, ItemsInterface, QuestInterfate, CharacterInterface } from "../dataModel/index.ts"
+import { Weapon, Armor, Item } from "../dataModel/index.ts"
 import { Schema } from "mongoose";
 
 enum ArmorType {
@@ -131,8 +131,8 @@ interface characterData {
     row: number,
     col: number
   }
-  weaponSlot?:  Schema.Types.ObjectId | null | WeaponInterface;
-  armorSlot?:  {
+  weaponSlot?: Schema.Types.ObjectId | null | WeaponInterface;
+  armorSlot?: {
     headGear?: Schema.Types.ObjectId | ArmorInterface | null,
     chestArmor?: Schema.Types.ObjectId | ArmorInterface | null,
     handArmor?: Schema.Types.ObjectId | ArmorInterface | null,
@@ -149,11 +149,11 @@ interface characterData {
   experience: number;
 }
 
-async function populateItemsByClass(character: characterData, WhichPossibleItems: {ItemId: Record<string, string>, weaponId: Record<string, string>, armorId: Record<string, string>}): Promise<void> {
+async function populateItemsByClass(character: characterData, WhichPossibleItems: { ItemId: Record<string, string>, weaponId: Record<string, string>, armorId: Record<string, string> }): Promise<void> {
   const { ItemId, weaponId, armorId } = WhichPossibleItems;
-  const Items = await Item.find({ name: { $in: Object.values(ItemId)}}).select({ _id: 1 });
-  const Weapons = await Weapon.find({ name: { $in: Object.values(weaponId) }}).select({ _id: 1 });
-  const Armors = await Armor.find({ setsName: { $in: Object.values(armorId)}}).select({ _id: 1, type: 1 });
+  const Items = await Item.find({ name: { $in: Object.values(ItemId) } }).select({ _id: 1 });
+  const Weapons = await Weapon.find({ name: { $in: Object.values(weaponId) } }).select({ _id: 1 });
+  const Armors = await Armor.find({ setsName: { $in: Object.values(armorId) } }).select({ _id: 1, type: 1 });
   Items.forEach((item) => {
     character.inventory.push({
       item: item._id as Schema.Types.ObjectId,
@@ -168,17 +168,17 @@ async function populateItemsByClass(character: characterData, WhichPossibleItems
   })
   character.weaponSlot = Weapons[0]
   Armors.forEach((item) => {
-    if(character.armorSlot){
-      if(item.type === ArmorType.headGear){
+    if (character.armorSlot) {
+      if (item.type === ArmorType.headGear) {
         character.armorSlot.headGear = item._id as Schema.Types.ObjectId
       }
-      if(item.type === ArmorType.chestArmor){
+      if (item.type === ArmorType.chestArmor) {
         character.armorSlot.chestArmor = item._id as Schema.Types.ObjectId
       }
-      if(item.type === ArmorType.handArmor){
+      if (item.type === ArmorType.handArmor) {
         character.armorSlot.handArmor = item._id as Schema.Types.ObjectId
       }
-      if(item.type === ArmorType.legArmor){
+      if (item.type === ArmorType.legArmor) {
         character.armorSlot.legArmor = item._id as Schema.Types.ObjectId
       }
     }
@@ -285,41 +285,41 @@ export const StarterCharacter = async (Name: string): Promise<characterData> => 
   };
 
   switch (Name) {
-    case "Assassin":{
+    case "Assassin": {
       const character = classes[Name];
       await populateItemsByClass(character, assassinAllPossibleItemsId);
       return character;
     }
-    case "Mage":{
+    case "Mage": {
       const character = classes[Name];
       await populateItemsByClass(character, mageAllPossibleItemsId);
       return character;
     }
 
-    case "Warrior":{
+    case "Warrior": {
       const character = classes[Name];
       await populateItemsByClass(character, warriorAllPossibleItemsId);
       return character;
     }
 
-    case "Mercenary":{
+    case "Mercenary": {
       const character = classes[Name];
       await populateItemsByClass(character, mercenaryAllPossibleItemsId);
       return character;
     }
 
-    case "Berserker":{
+    case "Berserker": {
       const character = classes[Name];
       await populateItemsByClass(character, berserkerAllPossibleItemsId);
       return character;
     }
 
-    case "Knight":{
+    case "Knight": {
       const character = classes[Name];
       await populateItemsByClass(character, knightAllPossibleItemsId);
       return character;
     }
-    default:{
+    default: {
       const character = classes["Knight"];
       await populateItemsByClass(character, knightAllPossibleItemsId);
       return character;

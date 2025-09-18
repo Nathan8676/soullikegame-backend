@@ -27,6 +27,11 @@ export const config = {
     maxHealth: parseInt(process.env.PLAYER_MAX_HEALTH || "100", 10),
     maxStamina: parseInt(process.env.PLAYER_MAX_STAMINA || "100", 10),
     maxMana: parseInt(process.env.PLAYER_MAX_MANA || "50", 10),
+    maxSpeed: parseFloat(process.env.MAX_SPEED || ""),
+    maxSprintingSpeed: parseFloat(process.env.MAX_SPRINTING_SPEED || ""),
+    baseAccle: parseFloat(process.env.BASE_MOVEMENT_FORCE || ""),
+    friction: parseFloat(process.env.FRICTION || ""),
+    drag: parseFloat(process.env.DRAG || ""),
   },
   enemy: {
     respawnTime: parseInt(process.env.ENEMY_RESPAWN_TIME || "30", 10),
