@@ -2,14 +2,12 @@ import { Socket } from "socket.io";
 import { config } from "../../gameSetting.config";
 import type { ECSManager } from "../EntityManager";
 
-export interface Client extends Socket {
-  [key: string]: any
-}
 
-export const InputEvents = async (socket: Client, ecsManager: ECSManager, playerId: number) => {
+export const InputEvents = async (socket: Socket, ecsManager: ECSManager, playerId: number) => {
   socket.on("W", (data) => {
     // function for moving the character forward and validation for that move, comes from input.ts
-    ecsManager.emit("move", { entityId: playerId, ddirection: "W" })
+    ecsManager.emit("move", { entityId: playerId, direction: "W" })
+
   })
   socket.on("D", (data) => {
     // function for moving the character right and validation for that move, comes from input.ts

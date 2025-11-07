@@ -6,6 +6,7 @@ import { movePlayerSystem } from "./system/movement.system";
 import { Server } from "socket.io";
 import http from "http";
 import Player_infoRoute from "./routes/Player_info.route";
+import { userRouter } from "./routes/user.route";
 import PopulationRoute from "./routes/population.route";
 
 const app = express();
@@ -28,6 +29,7 @@ app.get("/", (req, res) => {
 
 app.use("/player_info", Player_infoRoute);
 app.use("/population", PopulationRoute);
+app.use("/user", userRouter)
 
 // ✅ Start game loop outside of any route
 export async function startGameLoop() {

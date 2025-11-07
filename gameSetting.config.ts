@@ -35,10 +35,16 @@ export const config = {
   },
   enemy: {
     respawnTime: parseInt(process.env.ENEMY_RESPAWN_TIME || "30", 10),
-    aggroRange: parseInt(process.env.AGGRO_RANGE || "5", 10),
+    aggroRange: parseInt(process.env.ENEMY_AGGRO_RANGE || "5", 10),
+    maxSpeed: parseFloat(process.env.ENEMY_MAX_SPEED || ""),
+    maxSprintingSpeed: parseFloat(process.env.ENEMY_MAX_SPRINTING_SPEED || ""),
+    baseAccle: parseFloat(process.env.ENEMY_BASE_MOVEMENT_FORCE || ""),
+    friction: parseFloat(process.env.ENEMY_FRICTION || ""),
+    drag: parseFloat(process.env.ENEMY_DRAG || ""),
   },
   db: {
     mongodbUrl: process.env.MONGODB_URL || "",
+    mongodbName: process.env.MONGODB_NAME,
   },
   debug: {
     debugMode: process.env.DEBUG_MODE === "true",

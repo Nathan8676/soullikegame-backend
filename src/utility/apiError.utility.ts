@@ -1,5 +1,7 @@
 import * as z from "zod"
 
+// TODO: maybe Refactor this cause having type here with zod is not need i think right now
+
 const apiErrorsSchema = z.object({
   statusCode: z.number(),
   errors: z.array(z.any()),

@@ -8,10 +8,14 @@ export { asyncHandler } from "./asyncHandler.utility";
 
 export { mustHave, assertSoftDefined } from "./assert.utility";
 
+export { generateId } from "./randomIdGenerator.utility";
+
 export {
   type AttackStep,
   type WeaponMoveSetInterface,
   getWeaponMoveSet
 } from "./moveSet.utility";
+
+export { VerifyJWT } from "./auth.utility";
 
 export { StarterCharacter } from "./starterChracter.utility";

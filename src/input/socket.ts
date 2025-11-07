@@ -1,10 +1,12 @@
 import { Socket } from "socket.io";
+import { sessionManager } from "../session/sessionManager";
+import GameSession from "../session/GameSession";
 import GameState from "../gameState";
-import { InputEvents, type Client } from "./inputs";
+import { InputEvents } from "./inputs";
 import { loadDataBeforeGameLoopStarts } from "../gameLoop";
-import { ApiErrors, mustHave } from "../utility/index.utility";
+import { ApiErrors, mustHave, StarterCharacter } from "../utility/index.utility";
 import jwt from "jsonwebtoken";
-import { User, pubUserSchema, type PubUser } from "../dataModel";
+import { Character, User, pubUserSchema, type PubUser } from "../dataModel";
 import { config } from "../../gameSetting.config";
 import * as z from "zod"
 import { io } from "../app";
@@ -20,9 +22,6 @@ declare module "socket.io" {
     user?: PubUser
   }
 }
-
-type AllClientSockets = Map<string, Client>
-export var clients: AllClientSockets = new Map()
 
 export function runSocketIo() {
   io.use(async (socket: Socket, next) => {
@@ -48,29 +47,36 @@ export function runSocketIo() {
 
   io.on("connection", (socket: Socket) => {
     const user = socket.user
-    clients.set(user?.userName!, socket)
+    // TODO: make other listener that can be use to join other player world with ECSManager as there instance 
     socket.on("joinGame", async (data) => {
       const { characterId } = data
-      const user = pubUserSchema.safeParse(await User.findById(characterId).select("-password -refreshToken"))
-      if (!user.success) return socket.emit("error", "invalid_character")
-      if (user.data.characterIds.find((id) => id === characterId) === undefined) return socket.emit("error", "forbidden");
-      const { ecsManager, player } = await loadDataBeforeGameLoopStarts(characterId)
-      if (ecsManager instanceof Error) return socket.emit("error", ecsManager)
-      // TODO: add a map that point ecsManager to the user id. map player.id to world id (class base | function base) 
+      if (user!.characterIds.find((id) => id === characterId) === undefined) return socket.emit("error", "forbidden");
+      // TODO: make sure that loadData before Game Loop Starts can also handle finding other player Ecsmanager/world and able to return that as well 
+      // or make a diff function for that. need to use session maanger to find other player world 
+      const { ecsManager, player, gameState } = await loadDataBeforeGameLoopStarts(characterId)
 
+      if (ecsManager instanceof Error) return socket.emit("error", ecsManager)
+
+      const gameSession = new GameSession(user?.userName as string, ecsManager, socket)
+
+      sessionManager.create(gameSession)
+      socket.emit("playerState", player)
+      socket.emit("chunksData", gameState.chunks)
+      socket.emit("map", gameState.mapLayout)
       InputEvents(socket, ecsManager, player.id)
     })
     socket.on("newGame", async (data) => {
       const { characterName, classType } = data
-      // TODO: Do check data that coming for client
+      // TODO: Do check data that coming for client and enforce classType value to be one of the value in enum
       const character = await GameState.newGameState(characterName, classType)
       // TODO: Before emitting put character id to user Account characterIds arr and push it to db
       socket.emit("CharacterId", character._id)
     })
 
-    socket.on("getStarterClasses", () => {
-      socket.emit("starterClasses",) // give a stripped-down version of StarterCharacter with min stats, items/weapons info
+    socket.on("getStarterClasses", async () => {
+      socket.emit("starterClasses", await StarterCharacter(undefined, true))
     })
+
   })
 
 }

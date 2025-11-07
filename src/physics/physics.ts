@@ -69,6 +69,9 @@ export function integrate(entity: ECS, deltaTime: number) {
   entity.updateComponent("rigidBody", rb);
 }
 
+// TODO: Remove this inRenderDistance function and add fn/method in EcsManager to get entities via chunksData
+// this would make the renderDistance bigger and also we won't need to translate the chunks render to player radius 
+// we can just give the chunk render one 
 export function inRenderDistance(entityPos: { x: number, y: number }, playerPos: { x: number, y: number }, radius: number) {
   const dx = entityPos.x - playerPos.x
   const dy = entityPos.y - playerPos.y

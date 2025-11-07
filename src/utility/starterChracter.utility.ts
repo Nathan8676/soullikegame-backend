@@ -2,6 +2,16 @@ import type { WeaponInterface, WeaponType, ArmorInterface, StatusEffectInterface
 import { Weapon, Armor, Item } from "../dataModel/index.ts"
 import { Schema } from "mongoose";
 
+type minCharacterSelector = Omit<characterData, "gold" | "characterPosition" | "statusEffect" | "mapLayout" | "experience">
+
+function omit<T extends object, K extends keyof T>(obj: T, keys: K[]): Omit<T, K> {
+  const clone = { ...obj }
+  for (const key of keys) {
+    delete clone[key];
+  }
+  return clone
+}
+
 enum ArmorType {
   headGear = "headGear",
   chestArmor = "chestArmor",
@@ -102,6 +112,7 @@ const warriorAllPossibleItemsId = {
   }
 };
 
+
 const assassinAllPossibleItemsId = {
   ItemId: {
     lockpick: "Silent Lockpick",
@@ -184,7 +195,7 @@ async function populateItemsByClass(character: characterData, WhichPossibleItems
     }
   })
 }
-export const StarterCharacter = async (Name: string): Promise<characterData> => {
+export const StarterCharacter = async (Name?: string, isMinState?: boolean): Promise<characterData | Record<string, minCharacterSelector>> => {
   const classes: Record<string, characterData> = {
     Assassin: {
       name: "Assassin",
@@ -283,6 +294,25 @@ export const StarterCharacter = async (Name: string): Promise<characterData> => 
       experience: 0,
     }
   };
+  if (isMinState) {
+    const lookUpTable = {
+      Assassin: assassinAllPossibleItemsId,
+      Mage: mageAllPossibleItemsId,
+      Warrior: warriorAllPossibleItemsId,
+      Mercenary: mercenaryAllPossibleItemsId,
+      Berserker: berserkerAllPossibleItemsId,
+      Knight: knightAllPossibleItemsId
+    }
+    const finishObject: Record<string, minCharacterSelector> = {}
+    for (const className in classes) {
+      const key = className as keyof typeof lookUpTable
+      const classData = { ...classes[className] }
+      await populateItemsByClass(classData as characterData, lookUpTable[key])
+      const striped = omit(classData, ["gold", "characterPosition", "statusEffect", "mapLayout", "experience"])
+      finishObject[className] = striped
+    }
+    return finishObject
+  }
 
   switch (Name) {
     case "Assassin": {

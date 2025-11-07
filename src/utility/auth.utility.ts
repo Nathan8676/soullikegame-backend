@@ -20,7 +20,7 @@ declare global {
   }
 }
 
-const VerifyJWT = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
+export const VerifyJWT = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
   try {
     const jwtToken = req.cookies?.accessToken || req.header?.("Authorization")?.replace("Bearer ", "")
 
@@ -42,4 +42,3 @@ const VerifyJWT = asyncHandler(async (req: Request, res: Response, next: NextFun
   }
 })
 
-export default VerifyJWT

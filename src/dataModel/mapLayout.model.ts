@@ -1,5 +1,5 @@
 import mongoose, { Schema, Document } from "mongoose";
-import type { ItemsInterface, FloorEntitiesInterface, FloorBossInterface } from "./index.ts";
+import type { ItemsInterface, FloorEnemyInterface, FloorBossInterface } from "./index.ts";
 
 export interface TileLayout {
   tileId: number;
@@ -41,7 +41,7 @@ export interface MapLayout extends Document {
       row: number,
       col: number
     },
-    floorEntity: Schema.Types.ObjectId | FloorEntitiesInterface,
+    floorEntity: Schema.Types.ObjectId | FloorEnemyInterface,
     [key: string]: any
   }],
   floorItem: Schema.Types.ObjectId[] | ItemsInterface[];

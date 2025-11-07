@@ -7,9 +7,10 @@ import { getWeaponMoveSet } from "../utility/moveSet.utility";
 import type { rigidBody } from "../Entites/PlayerEntity";
 import type { AttackState, AttackType } from "../Entites/PlayerEntity";
 import { AttackType as AttackTypeValue } from "../Entites/PlayerEntity";
+import { ECSManager } from "../EntityManager";
 import type { WeaponType, WeaponInterface } from "../dataModel";
 
-export function combatSystem(entities: ECS[], deltaTime: number, chunk: Map<string, TileLayoutInterface[][]>, globalTime: number) {
+export function combatSystem(entities: ECS[], deltaTime: number, ECSInstance: ECSManager, chunk: Map<string, TileLayoutInterface[][]>, globalTime: number) {
   const entitiesInCombat = entities.filter((en) => {
     let rb = assertSoftDefined<rigidBody>(en.getComponent<rigidBody>("rigidBody"), `missing rigidBody ${en.id}`)
     let isAlive = assertSoftDefined<boolean>(en.getComponent("isAlive"), `missing isAlive ${en.id}`)

@@ -1,4 +1,5 @@
 import { Socket } from "socket.io"
+import { generateId } from "./utility/index.utility.ts"
 import { type AttackState, AttackType } from "./Entites/PlayerEntity.ts"
 import type { rigidBody } from "./Entites/PlayerEntity.ts"
 import type { CharacterInterface, TileLayoutInterface } from "./dataModel/index.ts"
@@ -17,13 +18,17 @@ type characterPosition = {
 type chunks = Map<string, TileLayoutInterface[][]>
 
 export class ECSManager extends EventEmitter {
+  private readonly id: string
+  public lowPriorityQueues = new Map<string, Record<string, any>[]>()
+  public highPriorityQueues = new Map<string, Record<string, any>[]>()
+  public inSideRenderDistance: ECS[] = []
+  public outSideRenderDistance: ECS[] = []
   private GlobalTime!: number
   private Entites: ECS[] = []
   private chunkData!: chunks
-  private socketEntities: Map<string, Socket> = new Map()
   private playerPos!: characterPosition
   private renderDistance: number = 20
-  private systems: ((entity: ECS[], deltaTime: number, chunk?: Map<string, TileLayoutInterface[][]>, globalTime?: number) => void)[] = []
+  private systems: ((entity: ECS[], deltaTime: number, ECSInstance: ECSManager, chunk?: Map<string, TileLayoutInterface[][]>, globalTime?: number, isBackground?: boolean) => void)[] = []
   static setup(gameState: GameState, globalTime: number, rd?: number) {
     if (!gameState.chunks || !gameState.character?.characterPosition || globalTime) {
       return new Error("GameState is missing required data")
@@ -33,6 +38,7 @@ export class ECSManager extends EventEmitter {
 
   private constructor(playerPos: characterPosition, chunk: chunks, globalTime: number, rd?: number) {
     super()
+    this.id = generateId()
     this.setGlobalTime(globalTime)
     this.setPlayerPos(playerPos)
     this.setChunkData(chunk)
@@ -40,6 +46,41 @@ export class ECSManager extends EventEmitter {
     if (rd) {
       this.setRenderDistance(rd)
     }
+  }
+
+  addDirtyComponentsForQueues(entityId: string, comp: Record<string, any>, prioriy: 'high' | "low") {
+    const queue = prioriy === 'high' ? this.highPriorityQueues : this.lowPriorityQueues
+    const exsitingQueue = queue.get(entityId)
+
+    if (exsitingQueue) {
+      exsitingQueue.push(comp)
+
+    } else {
+      queue.set(entityId, [comp])
+    }
+  }
+
+  sendQueues() {
+    const highUpdate = Array.from(this.highPriorityQueues.entries()).map(([entityId, comp]) => ({
+      entityId,
+      components: comp
+    }))
+    const lowUpdate = Array.from(this.lowPriorityQueues.entries()).map(([entityId, comp]) => ({
+      entityId,
+      components: comp
+    }))
+
+    return { highUpdate, lowUpdate }
+  }
+
+  cleanQueuesAfterSending() {
+    // TODO: can add some check if want when clearing the Queues
+    this.highPriorityQueues.clear()
+    this.lowPriorityQueues.clear()
+  }
+
+  getInstanceId() {
+    return this.id
   }
 
   private setupEvent() {
@@ -105,9 +146,6 @@ export class ECSManager extends EventEmitter {
 
   }
 
-  linkSocket(playerId: string, socket: Socket) {
-    this.socketEntities.set(playerId, socket)
-  }
 
   setGlobalTime(val: number) {
     this.GlobalTime = val
@@ -145,7 +183,7 @@ export class ECSManager extends EventEmitter {
     this.Entites.push(data)
   }
 
-  addSystem(system: (entity: ECS[], deltaTime: number, chunk?: Map<string, TileLayoutInterface[][]>) => void) {
+  addSystem(system: (entity: ECS[], deltaTime: number, ECSInstance: ECSManager, chunk?: Map<string, TileLayoutInterface[][]>) => void) {
     this.systems.push(system)
   }
 
@@ -164,28 +202,31 @@ export class ECSManager extends EventEmitter {
     return true
   }
 
+  // TODO: make a method that get inside and outside en via enPos and save/emit it
   update(deltaTime: number) {
-    const inSideRenderDistance = this.Entites.filter((en) => {
+    this.inSideRenderDistance = this.Entites.filter((en) => {
       const enPos = en.getComponent<characterPosition>("characterPosition")
       if (!enPos) return false
       if (enPos.Floor === this.playerPos?.Floor) {
+        // TODO: explantion: we don't want player circle en but chunks base this why we player can't see the en it can still go it all the system
+        // and for player fov we can just do that on frontend do it later since it won't change the fundamental of sending inside en to frontend
         return inRenderDistance({ x: enPos.row, y: enPos.col }, { x: this.playerPos.row, y: this.playerPos.col }, this.renderDistance)
       } else return false
     })
     this.systems.forEach((system) => {
-      system(inSideRenderDistance, deltaTime, this.chunkData, this.getGlobalTime())
+      system(this.inSideRenderDistance, deltaTime, this, this.chunkData, this.getGlobalTime(), false)
     })
   }
 
   updateInBackground(deltaTime: number) {
-    const outSideRenderDistance = this.Entites.filter((en) => {
+    this.outSideRenderDistance = this.Entites.filter((en) => {
       const enPos = en.getComponent<characterPosition>("characterPosition")
       if (!enPos) return false
       if (enPos.Floor !== this.playerPos?.Floor) return true
       return !inRenderDistance({ x: enPos.row, y: enPos.col }, { x: this.playerPos.row, y: this.playerPos.col }, this.renderDistance)
     })
     this.systems.forEach((system) => {
-      system(outSideRenderDistance, deltaTime, this.chunkData, this.getGlobalTime())
+      system(this.outSideRenderDistance, deltaTime, this, this.chunkData, this.getGlobalTime(), true)
     })
   }
 }

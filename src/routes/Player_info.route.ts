@@ -4,6 +4,7 @@ import router from "express/lib/router/index.js"
 
 const Player_infoRoute = router()
 
+// TODO: remove these route since we handle new and continue game in socket
 Player_infoRoute.get("/newGameState/test", async (req: Request, res: Response, next: NextFunction) => {
   try {
     const gameState = await GameState.newGameState("vimer", ClassType.Knight)
@@ -30,5 +31,7 @@ Player_infoRoute.get("/continueGameState/test", async (req: Request, res: Respon
   }
 })
 
+
 export default Player_infoRoute
+
 
