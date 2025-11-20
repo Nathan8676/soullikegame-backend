@@ -218,6 +218,7 @@ bun run index.ts
 
 ### Database Population
 
+
 ```bash
 # Populate base items (weapons, armor, consumables)
 curl http://localhost:8080/population/test
@@ -231,6 +232,9 @@ curl http://localhost:8080/population/floor-boss
 # Populate map data
 curl http://localhost:8080/population/mapdata
 ```
+
+To Add data or make changes naviget to  populateDB/ dir and add/change any Data for emeny, item, boss, map (for map tiled pipline will be add later )
+ 
 
 ---
 
