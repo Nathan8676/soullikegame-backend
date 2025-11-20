@@ -233,7 +233,7 @@ curl http://localhost:8080/population/floor-boss
 curl http://localhost:8080/population/mapdata
 ```
 
-To Add data or make changes naviget to  populateDB/ dir and add/change any Data for emeny, item, boss, map (for map tiled pipline will be add later )
+To Add data or make changes navigate to  populateDB/ dir and add/change any Data for emeny, item, boss, map (for map tiled pipline will be add later )
  
 
 ---
