@@ -1,29 +1,8 @@
-import mongoose, {Schema, Document} from "mongoose";
+import mongoose, { Schema } from "mongoose";
+import { type WeaponInterface, WeaponType } from "../utility/interface.utility";
 
-export enum WeaponType {
-  shortSword = "shortSword",
-  longSword = "longSword",
-  dagger = "dagger",
-  staff = "staff",
-  bow = "bow",
-  axe = "axe"
-}
 
-export interface Weapon extends Document {
-  name: string;
-  damage: number;
-  manaCost: number;
-  staminaCost: number;
-  type: WeaponType;
-  weight: number;
-  image: string;
-  effect: Schema.Types.ObjectId;
-  description: string;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
-const weaponSchema = new Schema<Weapon>({
+const weaponSchema = new Schema<WeaponInterface>({
   name: {
     type: String,
     required: true,
@@ -70,6 +49,6 @@ const weaponSchema = new Schema<Weapon>({
     type: String,
     required: true
   }
-}, {timestamps: true});
+}, { timestamps: true });
 
-export default mongoose.model<Weapon>("Weapon", weaponSchema);
+export default mongoose.model<WeaponInterface>("Weapon", weaponSchema);

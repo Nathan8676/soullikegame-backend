@@ -4,7 +4,7 @@ import { AttackType, type AttackState } from "./PlayerEntity";
 import { FacingDirection } from "./PlayerEntity";
 import { type rigidBody } from "./PlayerEntity";
 import { facingEnum } from "./PlayerEntity";
-import type { FloorEnemy } from "../dataModel/floorEnemy.model";
+import type { FloorEnemyInterface } from "../utility/interface.utility";
 
 const mapToComponents = {
   name: "name",
@@ -20,10 +20,10 @@ const mapToComponents = {
 
 export class EnemyEntity extends ECS {
 
-  constructor(data: FloorEnemy) {
+  constructor(data: FloorEnemyInterface) {
     super()
     for (const [key, componentName] of Object.entries(mapToComponents)) {
-      this.addComponent(componentName, data[key as keyof FloorEnemy])
+      this.addComponent(componentName, data[key as keyof FloorEnemyInterface])
     }
 
     this.addComponent("rigidBody", {

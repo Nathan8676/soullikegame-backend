@@ -2,7 +2,7 @@ import GameState, { ClassType } from "./gameState";
 import { ApiErrors } from "./utility/index.utility"
 import { ECSManager } from "./EntityManager";
 import { PlayerEntity, type rigidBody } from "./Entites/PlayerEntity";
-import type { CharacterInterface } from "./dataModel";
+import type { CharacterInterface } from "./utility/interface.utility";
 
 export async function loadDataBeforeGameLoopStarts(id: string) {
   // TODO: handle id input and put some test and check

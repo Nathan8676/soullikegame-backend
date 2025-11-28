@@ -1,4 +1,4 @@
-import type { WeaponInterface, WeaponType, ArmorInterface, StatusEffectInterface, MapLayoutInterface, ItemsInterface, QuestInterfate, CharacterInterface } from "../dataModel/index.ts"
+import type { WeaponInterface, WeaponType, ArmorInterface, StatusEffectInterface, MapLayoutInterface, ItemsInterface, QuestInterface, CharacterInterface } from "../utility/interface.utility.ts"
 import { Weapon, Armor, Item } from "../dataModel/index.ts"
 import { Schema } from "mongoose";
 

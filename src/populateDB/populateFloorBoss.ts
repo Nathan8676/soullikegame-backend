@@ -1,12 +1,12 @@
 import type { Response, NextFunction, Request } from "express";
 import { loadMapData as loadFloorBossData } from "./loadFileData";
 import { FloorBoss, Item, Weapon } from "../dataModel";
-import type { FloorBoss as FloorBossType } from "../dataModel/floorBoss.model";
+import type { FloorBossInterface } from "../utility/interface.utility";
 
 export async function popluateFloorBoss(req: Request, res: Response, next: NextFunction) {
   try {
     const data = await loadFloorBossData("FloorBoss")
-    const populatedata = await Promise.all(data.map(async (en: FloorBossType) => {
+    const populatedata = await Promise.all(data.map(async (en: FloorBossInterface) => {
       let itemId = await Item.find({ name: { $in: en.inventory } }).select({ _id: 1 })
       let weaponId = await Weapon.findOne({ name: { $in: en.weaponSlot } }).select({ _id: 1 })
       return {

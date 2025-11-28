@@ -1,12 +1,12 @@
 import type { Response, Request, NextFunction } from "express";
 import { loadMapData as loadFloorEnemyData } from "./loadFileData";
 import { FloorEnemy, Item, Weapon } from "../dataModel";
-import type { FloorEnemy as FloorEnemyType } from "../dataModel/floorEnemy.model";
+import type { FloorEnemyInterface } from "../utility/interface.utility";
 
 export async function popluateFloorEnemy(req: Request, res: Response, next: NextFunction) {
   try {
     const data = await loadFloorEnemyData("FloorEnemy")
-    const populatedata = await Promise.all(data.map(async (en: FloorEnemyType) => {
+    const populatedata = await Promise.all(data.map(async (en: FloorEnemyInterface) => {
       let itemId = await Item.find({ name: { $in: en.inventory } }).select({ _id: 1 })
       let weaponId = await Weapon.findOne({ name: { $in: en.weaponSlot } }).select({ _id: 1 })
       return {

@@ -1,5 +1,5 @@
 import type { Request, Response, NextFunction } from "express"
-import { Item, Weapon, Armor } from "../dataModel/index.ts"
+import { Item, Weapon, Armor } from "../dataModel"
 export async function populateBaseItems(req: Request, res: Response, next: NextFunction) {
   console.log("populating items")
   const items = [

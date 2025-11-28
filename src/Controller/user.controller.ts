@@ -1,6 +1,7 @@
 import type { Request, Response, NextFunction } from "express";
 import { ApiErrors, ApiResponse, type IApiErrors, type IApiResponse, asyncHandler, assertSoftDefined, mustHave } from "../utility/index.utility"
-import { type UserInterface, zUserSchema, User, type PubUser, pubUserSchema } from "../dataModel";
+import { User } from "../dataModel";
+import { type UserInterface, zUserSchema, type PubUser, pubUserSchema } from "../utility/interface.utility";
 import jwt from "jsonwebtoken"
 import { config } from "../../gameSetting.config";
 import z from "zod";

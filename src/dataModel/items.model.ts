@@ -1,21 +1,8 @@
-import mongoose , {Schema, Document} from "mongoose";
+import mongoose, { Schema } from "mongoose";
+import { type ItemsInterface, ItemType } from "../utility/interface.utility";
 
-enum ItemType {
-  consumable = "consumable",
-  nonConsumable = "nonConsumable"
-}
 
-export interface Item extends Document {
-  name: string;
-  type: ItemType;
-  weight: number;
-  image: string;
-  description: string;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
-const itemSchema = new Schema<Item>({
+const itemSchema = new Schema<ItemsInterface>({
   name: {
     type: String,
     required: true,
@@ -40,6 +27,6 @@ const itemSchema = new Schema<Item>({
     type: String,
     required: true
   },
-}, {timestamps: true});
+}, { timestamps: true });
 
-export default mongoose.model<Item>("Item", itemSchema);
+export default mongoose.model<ItemsInterface>("Item", itemSchema);

@@ -1,14 +1,13 @@
 import { assertSoftDefined, type WeaponMoveSetInterface } from "../utility/index.utility"
 import { ECS } from "../Entites/baseEntity";
 import { config } from "../../gameSetting.config";
-import type { TileLayoutInterface } from "../dataModel";
 import { dotProduct, normalize, distance } from "../physics/physics";
 import { getWeaponMoveSet } from "../utility/moveSet.utility";
 import type { rigidBody } from "../Entites/PlayerEntity";
 import type { AttackState, AttackType } from "../Entites/PlayerEntity";
 import { AttackType as AttackTypeValue } from "../Entites/PlayerEntity";
 import { ECSManager } from "../EntityManager";
-import type { WeaponType, WeaponInterface } from "../dataModel";
+import type { WeaponType, WeaponInterface, TileLayoutInterface } from "../utility/interface.utility";
 
 export function combatSystem(entities: ECS[], deltaTime: number, ECSInstance: ECSManager, chunk: Map<string, TileLayoutInterface[][]>, globalTime: number) {
   const entitiesInCombat = entities.filter((en) => {

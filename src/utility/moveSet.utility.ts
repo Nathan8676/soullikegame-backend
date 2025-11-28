@@ -1,4 +1,4 @@
-import type { WeaponType } from "../dataModel"
+import type { WeaponType } from "../utility/interface.utility"
 export interface AttackStep {
   minTime: number
   maxTime: number

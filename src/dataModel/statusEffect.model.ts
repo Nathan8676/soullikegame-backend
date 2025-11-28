@@ -1,21 +1,8 @@
-import mongoose, {Schema, Document} from "mongoose";
+import mongoose, { Schema } from "mongoose";
+import { type StatusEffectInterface, StatusEffectType } from "../utility/interface.utility";
 
-enum StatusEffectType {
-  buff = "buff",
-  debuff = "debuff"
-}
 
-export interface StatusEffect extends Document {
-  name: string;
-  description: string;
-  effect: number;
-  type: StatusEffectType;
-  duration: number;
-  createdAt: any;
-  updatedAt: any;
-}
-
-const statusEffectSchema = new Schema<StatusEffect>({
+const statusEffectSchema = new Schema<StatusEffectInterface>({
   name: {
     type: String,
     required: true,
@@ -42,6 +29,6 @@ const statusEffectSchema = new Schema<StatusEffect>({
     required: true,
     enum: Object.values(StatusEffectType)
   }
-}, {timestamps: true});
+}, { timestamps: true });
 
-export default mongoose.model<StatusEffect>("StatusEffect", statusEffectSchema);
+export default mongoose.model<StatusEffectInterface>("StatusEffect", statusEffectSchema);

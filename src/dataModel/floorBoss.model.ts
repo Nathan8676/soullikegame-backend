@@ -1,19 +1,8 @@
-import mongoose, {Schema, Document} from "mongoose";
-import type { ItemsInterface, WeaponInterface, StatusEffectInterface } from "./index.ts";
+import mongoose, { Schema } from "mongoose";
+import type { FloorBossInterface } from "../utility/interface.utility";
 
-export interface FloorBoss extends Document {
-  name: string;
-  health: number;
-  weaponSlot: Schema.Types.ObjectId | WeaponInterface;
-  inventory: Schema.Types.ObjectId[] | ItemsInterface[];
-  mana: number;
-  strength: number;
-  statusEffect: Schema.Types.ObjectId[] | StatusEffectInterface[];
-  createdAt: Date;
-  updatedAt: Date;
-}
 
-const FloorBossSchema = new Schema<FloorBoss>({
+const FloorBossSchema = new Schema<FloorBossInterface>({
   name: {
     type: String,
     required: true,
@@ -38,8 +27,8 @@ const FloorBossSchema = new Schema<FloorBoss>({
     min: 0
   },
   statusEffect: {
-   type: [Schema.Types.ObjectId],
-   ref: "StatusEffect"
+    type: [Schema.Types.ObjectId],
+    ref: "StatusEffect"
   },
   weaponSlot: {
     type: Schema.Types.ObjectId,
@@ -49,6 +38,6 @@ const FloorBossSchema = new Schema<FloorBoss>({
     type: [Schema.Types.ObjectId],
     ref: "Item"
   },
-}, {timestamps: true});
+}, { timestamps: true });
 
-export default mongoose.model<FloorBoss>("FloorBoss", FloorBossSchema);
+export default mongoose.model<FloorBossInterface>("FloorBoss", FloorBossSchema);

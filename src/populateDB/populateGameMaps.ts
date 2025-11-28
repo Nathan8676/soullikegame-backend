@@ -1,6 +1,6 @@
 import type { Response, NextFunction, Request } from "express";
 import { MapLayout } from "../dataModel";
-import type { MapLayoutInterface } from "../dataModel";
+import type { MapLayoutInterface } from "../utility/interface.utility";
 import { loadMapData } from "./loadFileData";
 
 export async function populateGameMaps(req: Request, res: Response, next: NextFunction) {

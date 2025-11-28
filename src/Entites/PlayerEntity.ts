@@ -1,4 +1,4 @@
-import type { WeaponType, CharacterInterface } from "../dataModel/index.ts"
+import type { WeaponType, CharacterInterface } from "../utility/interface.utility.ts"
 import { config } from "../../gameSetting.config.ts";
 import { ECS } from "./baseEntity.ts";
 

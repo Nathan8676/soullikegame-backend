@@ -3,7 +3,8 @@ import ApiErrors from "./apiError.utility"
 import { asyncHandler } from "./asyncHandler.utility"
 import * as z from "zod"
 import jwt from "jsonwebtoken"
-import { User, pubUserSchema, type PubUser } from "../dataModel"
+import { User } from "../dataModel"
+import { pubUserSchema, type PubUser } from "../utility/interface.utility"
 import { config } from "../../gameSetting.config"
 
 

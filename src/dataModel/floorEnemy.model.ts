@@ -1,18 +1,8 @@
-import mongoose, { Schema, Document } from "mongoose";
+import mongoose, { Schema } from "mongoose";
+import type { FloorEnemyInterface } from "../utility/interface.utility";
 
-export interface FloorEnemy extends Document {
-  name: string;
-  health: number;
-  weaponSlot: Schema.Types.ObjectId;
-  inventory: Schema.Types.ObjectId[];
-  mana: number;
-  strength: number;
-  statusEffect: Schema.Types.ObjectId[];
-  createdAt: Date;
-  updatedAt: Date;
-};
 
-const floorEnemySchema = new Schema<FloorEnemy>({
+const floorEnemySchema = new Schema<FloorEnemyInterface>({
   name: {
     type: String,
     required: true,
@@ -50,4 +40,4 @@ const floorEnemySchema = new Schema<FloorEnemy>({
   }
 }, { timestamps: true });
 
-export default mongoose.model<FloorEnemy>("FloorEnemy", floorEnemySchema);
+export default mongoose.model<FloorEnemyInterface>("FloorEnemy", floorEnemySchema);

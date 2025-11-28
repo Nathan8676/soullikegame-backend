@@ -1,4 +1,3 @@
-import { Character, } from "./src/dataModel/index.ts"
 import { server, startGameLoop } from "./src/app.ts"
 import connectDb from "./src/DataBase/index.database.ts";
 

@@ -6,7 +6,8 @@ import { InputEvents } from "./inputs";
 import { loadDataBeforeGameLoopStarts } from "../gameLoop";
 import { ApiErrors, mustHave, StarterCharacter } from "../utility/index.utility";
 import jwt from "jsonwebtoken";
-import { Character, User, pubUserSchema, type PubUser } from "../dataModel";
+import { Character, User } from "../dataModel";
+import { pubUserSchema, type PubUser } from "../utility/interface.utility";
 import { config } from "../../gameSetting.config";
 import * as z from "zod"
 import { io } from "../app";

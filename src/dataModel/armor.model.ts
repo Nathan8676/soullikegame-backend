@@ -1,31 +1,8 @@
-import mongoose, {Schema, Document} from "mongoose";
-
-enum ArmorType {
-  headGear = "headGear",
-  chestArmor = "chestArmor",
-  handArmor = "handArmor",
-  legArmor = "legArmor"
-}
+import mongoose, { Schema } from "mongoose";
+import { type ArmorInterface, ArmorType } from "../utility/interface.utility";
 
 
-
-export interface Armor extends Document {
-  setsName: string;
-  durability: number;
-  physicalDefense: number;
-  fireDefense: number;
-  poisonDefense: number;
-  staminaCost: number;
-  type: ArmorType;
-  weight: number;
-  image: string;
-  description: string;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
-
-const armorSchema = new Schema<Armor>({
+const armorSchema = new Schema<ArmorInterface>({
   setsName: {
     type: String,
     required: true,
@@ -80,6 +57,6 @@ const armorSchema = new Schema<Armor>({
     type: String,
     required: true
   }
-}, {timestamps: true});
+}, { timestamps: true });
 
-export default mongoose.model<Armor>("Armor", armorSchema);
+export default mongoose.model<ArmorInterface>("Armor", armorSchema);
