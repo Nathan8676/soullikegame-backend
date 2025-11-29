@@ -29,8 +29,8 @@ export interface MapLayoutInterface extends Document {
     y: number;
   }
   layout: TileLayoutInterface[];
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
 export interface TileLayoutInterface {
@@ -173,12 +173,12 @@ export interface ItemsInterface extends Document {
   updatedAt: Date;
 }
 
+// ==================== StatusEffect ====================
+
 export enum StatusEffectType {
   buff = "buff",
   debuff = "debuff"
 }
-
-// ==================== StatusEffect ====================
 
 export interface StatusEffectInterface extends Document {
   name: string;

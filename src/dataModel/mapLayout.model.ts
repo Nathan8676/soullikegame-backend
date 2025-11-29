@@ -17,13 +17,24 @@ const TileLayoutSchema = new Schema<TileLayoutInterface>({
   data: {
     type: [[Number]],
     required: true,
-    // TODO: make a validate with validator and message to make sure that 2d arr follow mesurement height(col, y), width(row, x) 
   },
   property: {
     // TODO: find a way to add custom data 
   },
 
 }, { _id: false })
+
+TileLayoutSchema.post("validate", function(doc) {
+  const data = doc.data
+  const size = data.length * data[0].length;
+
+  if (size !== doc.height * doc.width) {
+    throw new Error(
+      `TileLayoutSchema: data size mismatch. Expected ${doc.height * doc.width}, got ${size}`
+    );
+  }
+})
+
 
 const mapLayoutSchema = new Schema<MapLayoutInterface>({
   name: {
